@@ -24,10 +24,38 @@ public class AutomaticSnake extends Snake implements Runnable{
         return (int) number;
 	}
 	
-	public void tryMove(){
-		Cell c = this.cell;
-	}
-	
+	// movimento Y
+		public BoardPosition getNextCellY(){
+			
+			Cell first = cells.getLast();
+			BoardPosition currPos = first.getPosition(); 
+			BoardPosition goalPos = board.getGoalPosition(); 
+			
+			//compara os 2 valores e devolve 1,-1 ou 0;
+			int dy = Integer.compare(goalPos.y, currPos.y);  
+			
+			//System.out.println("DY: " + dy);
+			
+			BoardPosition nextPosition = new BoardPosition(currPos.x , currPos.y + dy);
+			return nextPosition;
+		}
+		
+		//movimento X
+		public BoardPosition getNextCellX(){
+				
+				Cell first = cells.getLast();
+				BoardPosition currPos = first.getPosition(); 
+				BoardPosition goalPos = board.getGoalPosition(); 
+				
+				//compara os 2 valores e devolve 1,-1 ou 0;
+				int dx = Integer.compare(goalPos.x, currPos.x);  
+				
+				//System.out.println("DX: " + dx);
+				BoardPosition nextPosition = new BoardPosition(currPos.x + dx, currPos.y);
+				return nextPosition;
+				
+		}
+		
 	
 	@Override
 	public void run() {
@@ -61,7 +89,7 @@ public class AutomaticSnake extends Snake implements Runnable{
 		}		//TODO: automatic movement
 	}
 	
-	public void debug(int n){
+	public void debug(String n){
 		System.out.println("ESTOU AQUI:" + n);
 	}
 	

@@ -28,7 +28,7 @@ public abstract class Snake extends Thread implements Serializable{
 	protected LinkedList<Cell> cells = new LinkedList<Cell>();
 	protected int size = 5;
 	private int id;
-	private Board board;
+	public Board board;
 	public Lock lock = new ReentrantLock();
 	public Cell cell;
 	public CountDownLatch endgame = new CountDownLatch(DELTA_SIZE - 5);
@@ -149,7 +149,7 @@ public abstract class Snake extends Thread implements Serializable{
 			}
 		}
 	}
-	
+	/*
 	// movimento Y
 	public BoardPosition getNextCellY(){
 		
@@ -181,7 +181,7 @@ public abstract class Snake extends Thread implements Serializable{
 			return nextPosition;
 			
 	}
-	
+	*/
 	
 	
 	

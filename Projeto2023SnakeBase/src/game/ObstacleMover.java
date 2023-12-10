@@ -55,7 +55,8 @@ public class ObstacleMover extends Thread {
 	                // Opcional: você pode querer sair do loop se a thread for interrompida
 	                break;
 	            }
-	            System.err.println("Obstaculo em EXEC");
+	            //System.err.println("Obstaculo em EXEC");
+	            
 	            move();
 	            obstacle.decrementMoves();
 	        }
@@ -64,8 +65,10 @@ public class ObstacleMover extends Thread {
 	    } finally {
 	        //semaphore.release();
 	        //obstacle.setMoving(false);
-	        System.err.println("Semáforo: " + semaphore.availablePermits() + "do obstaculo: " + this.getId());	        
-	        //board.startObstacleMover();
+	    	
+	        //System.err.println("Semáforo: " + semaphore.availablePermits() + "do obstaculo: " + this.getId());	        
+	        
+	    	//board.startObstacleMover();
 	        board.startNextObstacleMovers();
 	    }
 	}

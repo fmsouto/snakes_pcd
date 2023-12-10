@@ -32,7 +32,7 @@ public class LocalBoard extends Board {
 	private static final int NUM_SIMULTANEOUS_MOVING_OBSTACLES = 3;
 	public static ExecutorService obstaclesExec = Executors.newFixedThreadPool(3);
 	public Semaphore semaphore = new Semaphore(NUM_SIMULTANEOUS_MOVING_OBSTACLES);
-	
+	//public static HumanSnake human = new HumanSnake(100,this);
 	
 	public LocalBoard() {
 		
@@ -54,6 +54,11 @@ public class LocalBoard extends Board {
 //		System.err.println("All elements placed");
 	}
 	
+	public void addHumanSnake(int i){
+		HumanSnake snake = new HumanSnake(i, this);
+		snakes.add(snake);
+		Thread snakeThread = new Thread(snake);
+	}
 	
 	
 	public void moveObstacles1(){

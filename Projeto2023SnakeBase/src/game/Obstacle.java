@@ -66,7 +66,7 @@ public class Obstacle extends GameElement implements Runnable {
 			lock.unlock();			
 			break;
 			}
-			}
+		}
 	}
 	
 	

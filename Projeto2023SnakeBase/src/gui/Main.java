@@ -7,12 +7,16 @@ import javax.net.ssl.StandardConstants;
 
 import environment.LocalBoard;
 import game.Server;
+import remote.RemoteBoard;
 
 public class Main {
 	public static void main(String[] args) {
-		LocalBoard board=new LocalBoard();
-		SnakeGui game = new SnakeGui(board,600,0);
-		game.init();
+		
+		//LocalBoard board=new LocalBoard();
+		Server server = new Server();
+		server.startServer(12345);
+		//SnakeGui game = new SnakeGui(board,600,0);
+		//game.init();
 		// Launch server
 		// TODO
 		

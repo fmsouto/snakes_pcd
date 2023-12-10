@@ -21,6 +21,9 @@ public abstract class Board extends Observable {
 	protected LinkedList<Snake> snakes = new LinkedList<Snake>();
 	protected LinkedList<Thread> snakesThread = new LinkedList<Thread>();
 	private LinkedList<Obstacle> obstacles= new LinkedList<Obstacle>();
+	public ArrayList<GameElement> elements = new ArrayList<>();
+
+	
 	
 	protected boolean isFinished;
 
